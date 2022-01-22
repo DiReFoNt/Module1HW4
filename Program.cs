@@ -47,18 +47,19 @@ namespace Task1
         {
             // Checking input for an error
             Console.WriteLine("Enter the length of the array:");
-            int lengthArray = Convert.ToInt32(Console.ReadLine());
-            int lengthArrayPair = 0;
-            int lengthArrayUnpair = 0;
-            var rand = new Random();
-            if (lengthArray > 0)
+            if (int.TryParse(Console.ReadLine(), out int lengthArray))
             {
                 Console.WriteLine("Data accepted");
+                Console.WriteLine("Source array:");
             }
             else
             {
                 throw new Exception("Please check your input");
             }
+
+            int lengthArrayPair = 0;
+            int lengthArrayUnpair = 0;
+            var rand = new Random();
 
             // creating an array of the desired length
             var arrayNumber = new int[lengthArray];
